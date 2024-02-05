@@ -1,14 +1,15 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { TestBed } from "@angular/core/testing";
+import { AppComponent } from "./app.component";
+import { ContentComponent } from "./content/content.component";
 
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, ContentComponent],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it("should create the app", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
@@ -17,13 +18,15 @@ describe('AppComponent', () => {
   it(`should have the 'frontend-test' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('frontend-test');
+    expect(app.title).toEqual("frontend-test");
   });
 
-  it('should render title', () => {
+  it("should render title", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, frontend-test');
+    expect(compiled.querySelector("h1")?.textContent).toContain(
+      "Hello, frontend-test"
+    );
   });
 });
